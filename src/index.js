@@ -34,7 +34,7 @@ function TraffiqAuth ({
       // Case 2: Has token
       const decoded = await jwt.verifyAsync(token, publicKey, { algorithms: ['RS256'] })
       if (decoded) {
-        const isValid = validateRequest(req, { appName, token, enforceIp, enforceUserAgent, preventTokenReuse })
+        const isValid = validateRequest(req, decoded, { appName, token, enforceIp, enforceUserAgent, preventTokenReuse })
 
         // Case 2a: Token is valid -> Application
         if (isValid) {
