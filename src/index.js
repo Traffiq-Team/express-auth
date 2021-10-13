@@ -53,8 +53,8 @@ function TraffiqAuth ({
 }
 
 function validateRequest (req, decoded, options) {
-  const { appName: decodedAppName, ipAddress, userAgent } = decoded
-  const { appName, enforceIp, enforceUserAgent, preventTokenReuse, token } = options
+  const { appName: decodedAppName, ipAddress, userAgent } = decoded ?? {}
+  const { appName, enforceIp, enforceUserAgent, preventTokenReuse, token } = options ?? {}
   const { ip } = req
 
   if (appName !== decodedAppName) {
