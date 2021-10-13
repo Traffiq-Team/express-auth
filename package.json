@@ -1,0 +1,40 @@
+{
+  "name": "@traffiq/express-auth",
+  "version": "1.0.0",
+  "description": "Middleware to integrate with Traffiq",
+  "main": "./dist",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rimraf dist",
+    "build": "npm run clean && babel src -d dist",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Traffiq-Team/express-auth.git"
+  },
+  "author": "Joshua Sun",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Traffiq-Team/express-auth/issues"
+  },
+  "homepage": "https://github.com/Traffiq-Team/express-auth#readme",
+  "dependencies": {
+    "bluebird": "^3.7.2",
+    "jsonwebtoken": "^8.5.1",
+    "node-cache": "^5.1.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
