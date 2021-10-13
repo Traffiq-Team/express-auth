@@ -1,11 +1,11 @@
-import jwt from 'jsonwebtoken'
-import NodeCache from 'node-cache'
-import bb from 'bluebird'
+const jwt = require('jsonwebtoken')
+const NodeCache = require('node-cache')
+const bb = require('bluebird')
 bb.promisifyAll(jwt)
 
 const keyCache = new NodeCache({ stdTTL: 300, checkperiod: 300 })
 
-export function TraffiqAuth ({
+function TraffiqAuth ({
   appName,
   publicKey,
   enforceIp,
@@ -78,3 +78,5 @@ function validateRequest (req, decoded, options) {
     keyCache.set(token, false)
   }
 }
+
+module.exports = TraffiqAuth
